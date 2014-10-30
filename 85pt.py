@@ -21,14 +21,20 @@ class MyApp:
 		self.button1.configure(text="OK", background= "green")
 		self.button1.grid(row=0, column=0)	
 		# Do not change <Button-1> when you create Button 2 :)
-		self.button1.bind("<Button-1>", self.button1Click) ### (1)
+
+
+		self.button2 = Button(self.myContainer1)
+		self.button2.configure(text="Cancel", background= "Red")
+		self.button2.grid(row=1, column=0)	
+		# Do not change <Button-1> when you create Button 2 :)
+		self.button2.bind("<Button-1>", self.button2Click) ### (1)
 		
 		
-	def button1Click(self, event):    ### (3)
-		if self.button1["background"] == "green": ### (4)
-			self.button1["background"] = "yellow"
+	def button2Click(self, event):    ### (3)
+		if self.button2["background"] == "Blue": ### (4)
+			self.button2["background"] = "Red"
 		else:
-			self.button1["background"] = "green"
+			self.button2["background"] = "Blue"
 	
 		
 root = Tk()
